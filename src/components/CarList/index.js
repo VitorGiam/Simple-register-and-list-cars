@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -6,9 +6,10 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import TableFooter from "@material-ui/core/TableFooter";
 import Paper from "@material-ui/core/Paper";
-import axios from "axios";
-
+import configuration from "../../../configuration.json";
+//Styled modules
 const CustomTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -43,6 +44,8 @@ const styles = theme => ({
   }
 });
 
+const API = `${configuration.baseUri}/cars`;
+
 const cars = [
   {
     id: "1",
@@ -76,9 +79,9 @@ function CarRegisterList(props) {
 
   return (
     <Paper className={classes.root}>
-      <h1 className={classes.h1}>Lista de carros</h1>
       <Table className={classes.table}>
         <TableHead>
+          <h1 className={classes.h1}>Lista de carros</h1>
           <TableRow>
             <CustomTableCell>ID</CustomTableCell>
             <CustomTableCell>Nome do carro</CustomTableCell>
@@ -86,17 +89,18 @@ function CarRegisterList(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {cars.map(n => {
+          {cars.map(car => {
             return (
-              <TableRow className={classes.row} key={n.id}>
-                <CustomTableCell>{n.id}</CustomTableCell>
-                <CustomTableCell>{n.name}</CustomTableCell>
-                <CustomTableCell>{n.year}</CustomTableCell>
+              <TableRow className={classes.row} key={car.id}>
+                <CustomTableCell>{car.id}</CustomTableCell>
+                <CustomTableCell>{car.name}</CustomTableCell>
+                <CustomTableCell>{car.year}</CustomTableCell>
               </TableRow>
             );
           })}
         </TableBody>
-        <h2 className={classes.h2}>Número de carros {cars.length}</h2>
+        <h1 className={classes.h2}>Número de carros {cars.length}</h1>
+        <TableFooter />
       </Table>
     </Paper>
   );
