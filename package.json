@@ -1,0 +1,28 @@
+{
+  "name": "simplecrud-register-and-list-cars-consuming-api",
+  "version": "0.0.76",
+  "description": "Demonstrates how extensible 🏁 React Final Form can be with the combination of FormSpy and setFieldData by creating a totally separate validation engine that runs when a field is blurred.",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "axios": "0.18.0",
+    "final-form": "4.0.0",
+    "material-ui": "1.0.0-alpha.19",
+    "prop-types": "latest",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-final-form": "3.0.2",
+    "react-fontawesome": "latest",
+    "styled-components": "2.4.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
