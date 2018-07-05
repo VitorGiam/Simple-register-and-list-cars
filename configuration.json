@@ -1,4 +1,4 @@
 {
-  "baseUri": "http://localhost:8081/api",
+  "baseUri": "http://localhost:8081",
   "header": "application/json"
 }

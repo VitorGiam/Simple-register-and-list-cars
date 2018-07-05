@@ -34,11 +34,11 @@ const styles = theme => ({
       backgroundColor: theme.palette.background.default
     }
   },
-  h1: {
+  thead: {
     marginLeft: theme.spacing.unit * 3,
     fontSize: 18
   },
-  h2: {
+  tfooter: {
     marginLeft: theme.spacing.unit * 3,
     fontSize: 12
   }
@@ -81,7 +81,7 @@ function CarRegisterList(props) {
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
-          <h1 className={classes.h1}>Lista de carros</h1>
+          <h1 className={classes.thead}>Lista de carros</h1>
           <TableRow>
             <CustomTableCell>ID</CustomTableCell>
             <CustomTableCell>Nome do carro</CustomTableCell>
@@ -99,7 +99,7 @@ function CarRegisterList(props) {
             );
           })}
         </TableBody>
-        <h1 className={classes.h2}>Número de carros {cars.length}</h1>
+        <h1 className={classes.tfooter}>Número de carros {cars.length}</h1>
         <TableFooter />
       </Table>
     </Paper>

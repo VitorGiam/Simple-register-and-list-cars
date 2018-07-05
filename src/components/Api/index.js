@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import configuration from "../../../configuration.json";
 
-const API = "https://hn.algolia.com/api/v1/search?query=";
-const DEFAULT_QUERY = "redux";
+const APIw = "http://localhost:8081/cars";
+const APIe = "https://hn.algolia.com/api/v1/search?query=";
+const API = "https://requestbin.io/16p1jlr1";
+
+const DEFAULT_QUERY = "";
 
 const withFetching = url => Comp =>
   class WithFetching extends Component {
@@ -17,12 +21,35 @@ const withFetching = url => Comp =>
 
     componentDidMount() {
       this.setState({ isLoading: true });
+      // var myHeaders = new Headers();
 
-      fetch(url)
+      // myHeaders.append("Content-Type", configuration.baseUri);
+
+      // var myInit = {
+      //   method: "GET",
+      //   headers: myHeaders,
+      //   cache: "default"
+      // };
+
+      // console.log(url);
+
+      fetch(url, {
+        method: "GET", // pode ser cors ou basic(default)
+        redirect: "follow",
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+      })
         .then(response => {
-          if (response.ok) {
+          console.log(response);
+          if (response) {
+            // const dataw = JSON.stringify(response, 0, 2);
+            console.log("ola");
             return response.json();
           } else {
+            console.log("fail");
+
+            window.alert("eita");
             throw new Error("Something went wrong ...");
           }
         })
@@ -36,7 +63,10 @@ const withFetching = url => Comp =>
   };
 
 const App = ({ data, isLoading, error }) => {
-  const hits = data.hits || [];
+  const cars = data.cars || [];
+
+  const dataw = JSON.stringify(data, 0, 2);
+  console.log(data);
 
   if (error) {
     return <p>{error.message}</p>;
@@ -48,9 +78,9 @@ const App = ({ data, isLoading, error }) => {
 
   return (
     <div>
-      {hits.map(hit => (
-        <div key={hit.objectID}>
-          <a href={hit.url}>{hit.title}</a>
+      {cars.map(car => (
+        <div>
+          <p>{car}</p>
         </div>
       ))}
     </div>
