@@ -1,11 +1,15 @@
 const Styles = theme => ({
-  root: {
-    width: "100%",
-    marginTop: theme.spacing.unit * 3,
-    overflowX: "auto"
+  div: {
+    width: "90%",
+    padding: 30
   },
   table: {
-    minWidth: 700
+    width: "100%"
+  },
+  root: {
+    width: "100%",
+    overflowX: "auto",
+    padding: 10
   },
   row: {
     "&:nth-of-type(odd)": {
@@ -13,11 +17,11 @@ const Styles = theme => ({
     }
   },
   thead: {
-    marginLeft: theme.spacing.unit * 3,
+    marginLeft: theme.spacing.unit,
     fontSize: 12
   },
-  tfooter: {
-    marginLeft: theme.spacing.unit * 3,
+  tbody: {
+    marginLeft: theme.spacing.unit,
     fontSize: 12
   }
 });
