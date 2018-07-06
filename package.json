@@ -7,6 +7,7 @@
   "main": "index.js",
   "dependencies": {
     "@material-ui/core": "latest",
+    "axios": "0.18.0",
     "final-form": "4.0.0",
     "material-ui": "1.0.0-alpha.19",
     "prop-types": "latest",

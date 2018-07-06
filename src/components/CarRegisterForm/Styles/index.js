@@ -18,9 +18,7 @@ const btn = (light, dark) => css`
       background-image: linear-gradient(${light}, ${dark});
     }
   }
-  &:visited {
-    color: black;
-  }
+
   &[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
@@ -35,35 +33,6 @@ const btnDanger = btn("#e27c79", "#c9302c");
 export default styled.div`
   font-family: sans-serif;
 
-  h1 {
-    text-align: center;
-    color: #222;
-  }
-
-  h2 {
-    text-align: left;
-    color: #222;
-  }
-
-  & > div {
-    text-align: center;
-  }
-
-  a {
-    display: block;
-    text-align: center;
-    color: #222;
-    margin-bottom: 10px;
-  }
-
-  p {
-    max-width: 500px;
-    margin: 10px auto;
-    & > a {
-      display: inline;
-    }
-  }
-
   form,
   div.form {
     text-align: left;
@@ -76,6 +45,7 @@ export default styled.div`
     position: relative;
 
     .loading {
+      margin: 10px auto;
       text-align: center;
       display: block;
       position: absolute;
@@ -103,7 +73,6 @@ export default styled.div`
         line-height: 32px;
       }
       & > input,
-      & > select,
       & > textarea {
         flex: 1;
         padding: 3px 5px;
@@ -112,26 +81,13 @@ export default styled.div`
         border: 1px solid #ccc;
         border-radius: 3px;
       }
-      & > input[type="checkbox"] {
-        margin-top: 7px;
-      }
-      & > div {
-        margin-left: 16px;
-        & > label {
-          display: block;
-          & > input {
-            margin-right: 3px;
-          }
-        }
-      }
+
       & > span {
+        margin: 10px;
         line-height: 32px;
         margin-left: 10px;
         color: #800;
         font-weight: bold;
-      }
-      & > button.remove {
-        ${btnDanger};
       }
     }
     & > .buttons {
