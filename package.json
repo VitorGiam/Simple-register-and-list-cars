@@ -1,18 +1,10 @@
 {
-  "name": "list-and-register-cars-consuming-api",
+  "name": "simplecrud-register-and-list-cars-consuming-api",
   "version": "1.0.0",
   "description":
-    "Forked from Final form.\n\nThis app contains API consum using axios, Final form, material-ui, Styled components",
-  "keywords": [
-    "Final form",
-    "Axios",
-    "API",
-    "React",
-    "Functional js",
-    "Material ui",
-    "Styled components",
-    "Sandbox Editor"
-  ],
+    "Forked from Final form.\n\n This app: Register a new car (name, year), list cars (id, name, year).",
+  "keywords": ["final form", "component styled", "material-ui", "axios", "api"],
+
   "main": "index.js",
   "dependencies": {
     "@material-ui/core": "latest",

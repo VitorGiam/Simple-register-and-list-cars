@@ -10,14 +10,11 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const onSubmit = async values => {
   const data = JSON.stringify(values, 0, 4);
 
-  window.alert(data);
-
   await sleep(300);
 
   axios
-    .post("/cars", data, {
-      headers: { "Content-Type": "application/json" }
-    })
+    .post("/cars", data)
+
     .then(function(response) {
       console.log(response);
     })
@@ -58,12 +55,7 @@ const CarRegisterForm = () => (
           </Field>
           <Field
             name="year"
-            validate={composeValidators(
-              required,
-              mustBeNumber,
-              mustBeLength(4)
-            )}
-          >
+            validate={composeValidators(required, mustBeNumber)}
             {({ input, meta }) => (
               <div>
                 <label>Ano do carro</label>
