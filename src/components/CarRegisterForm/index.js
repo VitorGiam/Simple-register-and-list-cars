@@ -56,6 +56,8 @@ const CarRegisterForm = () => (
           <Field
             name="year"
             validate={composeValidators(required, mustBeNumber)}
+          >
+
             {({ input, meta }) => (
               <div>
                 <label>Ano do carro</label>
