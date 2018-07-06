@@ -3,11 +3,7 @@ import axios from "axios";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
-
 import Styles from "../Styles";
-import configuration from "../../../configuration";
-
-const api = `${configuration.baseUri}/cars`;
 
 const WithFetching = url => Comp =>
   class WithFetching extends Component {
@@ -55,7 +51,7 @@ const App = ({ data, isLoading, error }) => {
     <TableBody>
       {cars.map(car => {
         return (
-          <TableRow className={Styles.thead} key={car.id}>
+          <TableRow className={Styles.tbody} key={car.id}>
             <TableCell className={Styles.row}>{car.id}</TableCell>
             <TableCell className={Styles.row}>{car.name}</TableCell>
             <TableCell className={Styles.row}>{car.year}</TableCell>
@@ -66,4 +62,4 @@ const App = ({ data, isLoading, error }) => {
   );
 };
 
-export default WithFetching(api)(App);
+export default WithFetching("/cars")(App);
